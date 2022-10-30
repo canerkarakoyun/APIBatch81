@@ -25,12 +25,12 @@ public class Get02b extends ReqresBaseUrl {
     @Test
     public void get01(){
     // set the url
-        spec.pathParams("first","api", "second", "users", "third", 23);
+        spec.pathParams("first", "users", "second", 23);
 
     // set the expected data
 
     // send the request and get the response
-        Response response = given().spec(spec).get("/{first}/{second}/{third}");
+        Response response = given().spec(spec).get("/{first}/{second}");
         response.prettyPrint();
 
     // do assertion
