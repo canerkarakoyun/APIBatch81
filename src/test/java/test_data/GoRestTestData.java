@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class GoRestTestData {
-    public Map<String, String> getDataKeyMap(String name,String email,String gender,String status) {
+    public Map<String, String> dataKeyMap(String name, String email, String gender, String status) {
 
         Map<String,String> dataKeyMap = new HashMap<>();
 
