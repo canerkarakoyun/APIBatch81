@@ -3,6 +3,7 @@ package get_request;
 import base_url.JsonplaceholderBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
+import test_data.JsonPlaceHolderTestData;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -62,6 +63,38 @@ public class Get08_ByMap extends JsonplaceholderBaseUrl {
 
         assertEquals(expectedData.get("userId"), actualData.get("userId"));
         assertEquals(expectedData.get("id"), actualData.get("id"));
+        assertEquals(expectedData.get("title"), actualData.get("title"));
+        assertEquals(expectedData.get("complated"), actualData.get("complated"));
+        assertEquals(200, response.getStatusCode());
+        assertEquals("1.1 vegur", response.getHeader("Via"));
+        assertEquals("cloudflare", response.getHeader("Server"));
+    }
+
+
+
+
+    // Dinamik Yontem
+    @Test
+    public void get01b() {
+        // Set the url
+        spec.pathParams("first","todos", "second",2);
+
+
+        // Set the expected data ==> payload
+
+        JsonPlaceHolderTestData objJsonPlcHldr = new JsonPlaceHolderTestData();
+        Map<String,Object> expectedData = objJsonPlcHldr.expectedDataMethod(1, "quis ut nam facilis et officia qui", false);
+
+
+        // Send the request and get the response
+        Response response = given().spec(spec).when().get("/{first}/{second}");
+        response.prettyPrint();
+
+        // Do assertion\
+        Map<String,Object> actualData = response.as(HashMap.class); // De-Serialization (Json'u Java'ya cevirdim)
+        System.out.println("actualData = " + actualData);
+
+        assertEquals(expectedData.get("userId"), actualData.get("userId"));
         assertEquals(expectedData.get("title"), actualData.get("title"));
         assertEquals(expectedData.get("complated"), actualData.get("complated"));
         assertEquals(200, response.getStatusCode());
