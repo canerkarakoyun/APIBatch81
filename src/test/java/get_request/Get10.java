@@ -49,7 +49,7 @@ public class Get10 extends GoRestBaseUrl {
 
         // Send the request and get the response
         Response response = given().spec(spec).when().get("/{first}/{second}");
-        response.prettyPrint();
+        //response.prettyPrint();
 
         // Do assertions
         Map<String, String> actualData = response.as(HashMap.class);
