@@ -60,13 +60,13 @@ public class Get11 extends GoRestBaseUrl {
         List<String> genders = response.jsonPath().getList("data.gender");
         System.out.println(genders);
 
-        int kadinSayisi = 0;
+        int numOfFemale = 0;
         for (String w:genders) {
             if (w.equalsIgnoreCase("female")){
-            kadinSayisi++;
+            numOfFemale++;
             }
         }
-        assertTrue(kadinSayisi<= genders.size()-kadinSayisi);
+        assertTrue(numOfFemale<= genders.size()-numOfFemale);
 
         // 2. Yol (Groovy ile)
         List<String> femaleNames = response.jsonPath().getList("data.findAll{it.gender=='female'}.name");
