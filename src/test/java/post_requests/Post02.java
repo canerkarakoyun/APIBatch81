@@ -70,8 +70,8 @@ public class Post02 extends RestfulBaseUrl {
         assertEquals(expectedData.get("lastname"), ((Map)actualData.get("booking")).get("lastname"));
         assertEquals(expectedData.get("totalprice"), ((Map)actualData.get("booking")).get("totalprice"));
         assertEquals(expectedData.get("depositepaid"), ((Map)actualData.get("booking")).get("depositepaid"));
-        assertEquals(expectedData.get("bookingdates.checkin"), actualData.get("booking.bookingdates.checkin"));
-        assertEquals(expectedData.get("bookingdates.checkout"), actualData.get("bookingdates.checkout"));
+        assertEquals(bookingdatesMap.get("checkin"),((Map)(((Map)(actualData.get("booking"))).get("bookingdates"))).get("checkin"));
+        assertEquals(bookingdatesMap.get("checkout"),((Map)(((Map)(actualData.get("booking"))).get("bookingdates"))).get("checkout"));
 
     }
 
