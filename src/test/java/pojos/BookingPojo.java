@@ -4,15 +4,15 @@ public class BookingPojo {
     private String firstname;
     private String lastname;
     private Integer totalprice;
-    private Boolean depositepaid;
+    private Boolean depositpaid;
     private BookingDatesPojo bookingdates;
     private String additionalneeds;
 
-    public BookingPojo(String firstname, String lastname, Integer totalprice, Boolean depositepaid, BookingDatesPojo bookingdates, String additionalneeds) {
+    public BookingPojo(String firstname, String lastname, Integer totalprice, Boolean depositpaid, BookingDatesPojo bookingdates, String additionalneeds) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.totalprice = totalprice;
-        this.depositepaid = depositepaid;
+        this.depositpaid = depositpaid;
         this.bookingdates = bookingdates;
         this.additionalneeds = additionalneeds;
     }
@@ -44,12 +44,12 @@ public class BookingPojo {
         this.totalprice = totalprice;
     }
 
-    public Boolean getDepositepaid() {
-        return depositepaid;
+    public Boolean getDepositpaid() {
+        return depositpaid;
     }
 
-    public void setDepositepaid(Boolean depositepaid) {
-        this.depositepaid = depositepaid;
+    public void setDepositpaid(Boolean depositpaid) {
+        this.depositpaid = depositpaid;
     }
 
     public BookingDatesPojo getBookingdates() {
@@ -74,7 +74,7 @@ public class BookingPojo {
                 "firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
                 ", totalprice=" + totalprice +
-                ", depositepaid=" + depositepaid +
+                ", depositpaid=" + depositpaid +
                 ", bookingdates=" + bookingdates +
                 ", additionalneeds='" + additionalneeds + '\'' +
                 '}';
