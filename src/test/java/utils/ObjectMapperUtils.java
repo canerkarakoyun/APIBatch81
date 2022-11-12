@@ -12,7 +12,7 @@ public class ObjectMapperUtils {
     static{
         mapper = new ObjectMapper();
     }
-    public static <T> T convertJsonToJava(String json, Class<T>cls){
+    public static <T> T convertJsonToJava(String json, Class<T>cls){ // Generic data type, generic method
        T javaResult = null;
 
         try {
